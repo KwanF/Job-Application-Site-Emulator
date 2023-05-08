@@ -31,23 +31,31 @@
         #banner {
             width: 100%;
             height: auto;
+            object-fit:cover;
+            margin-bottom: 16px;
         }
       </style>
 </head>
 <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="/static/banner.png" alt="Jobby Careers" >
     <div class="container">
     <h1 class="mt-3 mb-3">Jobby Careers</h1>
-    <img class="img-fluid" id="banner" src="/static/banner.png" alt="Jobby Careers" >
-    </div>
-    <div class="container">
-    <h2 class="mt-3 mb-3">What is Jobby?</h2>
-    <p> Jobby Careers is a job search website that features a wide range of job postings from all around the world. 
+   
+    <div class="row" style="margin-bottom: 16px">
+    <div class="col-md-6">
+    <p class="lead"> Jobby Careers is a job search website that features a wide range of job postings from all around the world. 
         The website allows you to search for jobs by keyword, location, salary range, job type, and more. 
         You can also create job alerts to be notified when new job postings that match your criteria are added to the site.
         In addition to searching for jobs, Jobby Careers also features useful resources to help you in your job search. 
         These include career advice, salary information, company reviews, and more. 
         You can also create a resume on the site and apply for jobs directly through the platform.
     </p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+        <img src="/static/people.jpg" alt="people" style=" height:320px; border-radius: 8px;">
+        </div>
+    </div>
     <h2>Open Positions</h2>
     <div>
         {% for job in jobs %}
@@ -55,9 +63,10 @@
         {% endfor %}
     </div>
     <div class="text-center">
-    <button class="btn btn-primary btn-lg">Contact us</button>
-    <p class="mt-4">Copyright 2023, Jobby</p>
+    <a class="btn btn-primary btn-lg"
+    href="mailto:hello@jobby.com?subject=Question%20about%20Job%20Openings&body=My%20name%3A%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20questions%3A%20%3Center%20question%20here%3E">Contact us</a>
     </div>
     </div>
+    {% include 'footer.html' %}
 </body>
 </html>
