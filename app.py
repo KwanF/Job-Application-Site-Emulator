@@ -4,35 +4,6 @@ from sqlalchemy import text
 
 app = Flask(__name__)
 
-# JOBS = [
-#     {
-#         'id': 1,
-#         'title': 'Software Engineer',
-#         'location': 'San Francisco, CA',
-#         'salary': '$200,000 - $250,000'
-
-#     },
-#     {
-#         'id': 2,
-#         'title': 'Senior Data Scientist',
-#         'location': 'San Francisco, CA',
-#         'salary': '$250,000 - $275,000'
-#     },
-#     {
-#         'id': 3,
-#         'title': 'Product Manager',
-#         'location': 'San Francisco, CA',
-#         'salary': '$200,000 - $250,000'
-#     },
-#     {
-#         'id': 4,
-#         'title': 'Data Engineer',
-#         'location': 'Remote',
-#        'salary': '$175,000 - $220,000'
-#     }
-# ]
-
-
 @app.route('/')
 def hello_world():
     jobs = load_jobs_from_db()

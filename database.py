@@ -1,8 +1,5 @@
 from sqlalchemy import create_engine, text
-import json
-import secrets
 import os
-
 
 db_connection_string = os.environ['DB_CONNECTION_STRING']
 
