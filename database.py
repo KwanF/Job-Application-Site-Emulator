@@ -1,11 +1,10 @@
 from sqlalchemy import create_engine, text
 import json
 import secrets
+import os
 
-with open('secrets.json') as f:
-    secrets = json.load(f)
 
-db_connection_string = secrets["default"]["DB_CONNECTION_STRING"]
+db_connection_string = os.environ['DB_CONNECTION_STRING']
 
 
 engine = create_engine(db_connection_string, 
